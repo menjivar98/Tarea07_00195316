@@ -103,7 +103,7 @@ public class MainController {
 		return mav;
 	}
 	
-	@PostMapping(value="/filtrar")
+	@GetMapping(value="/filtrar")
 	public ModelAndView filtro(@RequestParam(value="nombre") String cadena) {
 		ModelAndView mav = new ModelAndView();
 		List<Estudiante> estudiantes = null;

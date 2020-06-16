@@ -10,28 +10,28 @@
 
     <form th:action="@{/save}" th:object="${estudiante}" method="POST">
         <label for="nombre">Nombre: </label>
-        <input type="text" th:field="*{Nombre}">
+        <input type="text" th:field="*{nombre}">
         <br>
-        <span th:errors="*{Nombre}" style="color: red;"></span>
+        <span th:errors="*{nombre}" style="color: red;"></span>
         <br>
 
         <label for="apellido">Apellido: </label>
-        <input type="text" th:field="*{Apellido}">
+        <input type="text" th:field="*{apellido}">
         <br>
-        <span th:errors="*{Apellido}" style="color: red;"></span>
+        <span th:errors="*{apellido}" style="color: red;"></span>
         <br>
 
         <label for="edad">Edad (No menor a 18 a&ntilde;os): </label>
-        <input type="number" th:field="*{Edad}">
+        <input type="number" th:field="*{edad}">
         <br>
-        <span th:errors="*{Edad}" style="color: red;"></span>
+        <span th:errors="*{edad}" style="color: red;"></span>
         <br>
 
         <label>Activo</label>
-        <input type="radio" th:field="*{Estado}" th:value="true">
+        <input type="radio" th:field="*{estado}" th:value="true">
         <br>
         <label>Inactivo</label>
-        <input type="radio" th:field="*{Estado}" th:value="false">
+        <input type="radio" th:field="*{estado}" th:value="false">
 
         <input type="submit" value="Guardar">
     </form>

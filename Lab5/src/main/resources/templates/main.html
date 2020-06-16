@@ -24,9 +24,9 @@
          <th:block th:each="estudiante, row: ${estudiantes}">
            		<tr>
 	                <th th:text="${estudiante.codigoEstudiante}"></th>
-	                <th th:text="${estudiante.Nombre}"></th>
-	                <th th:text="${estudiante.Apellido}"></th>
-	                <th th:text="${estudiante.Edad}"></th>
+	                <th th:text="${estudiante.nombre}"></th>
+	                <th th:text="${estudiante.apellido}"></th>
+	                <th th:text="${estudiante.edad}"></th>
 	                <th th:text="${estudiante.estadoDelegate}"></th>
 	            </tr>
         	</th:block>
@@ -49,7 +49,7 @@
 	        <br>
 	        <input type="submit" value="Borrar">
 	    </form>
-	      <form th:action="@{/Filtrar}" method="post">
+	      <form th:action="@{/filtrar}">
 	        <label>Ingrese la cadena por la que desea filtrar: </label>
 	        <input type="text" name="nombre">
 	        <br>
