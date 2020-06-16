@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de estudiantes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<link rel="stylesheet" href="src/main/resources/static/style/main.css"  th:href = "@{/style/main.css}" type="text/css">
+	<link rel="stylesheet" href="src/main/resources/main.css"  th:href = "@{/main.css}" type="text/css">
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
@@ -36,42 +36,53 @@
 	            </tr>
         	</th:block>
     	</table>
-    	<br>
-	    <form th:action="@{/mostrarEstudiante}" method="POST">
-	        <label>Buscar por codigo de estudiante: </label>
-	        <input type="number" name="codigo">
-	        <br>
-	        <input type="submit" value="Buscar">
-	    </form>
-	    <br>
-	    <form th:action="@{/insertarEstudiante}">
-	        <input type="submit" value="Insertar nuevo estudiante">
-	    </form>
-	    <br>
-	    <form th:action="@{/borrarEstudiante}" method="POST">
-	        <label>Borrar estudiante por codigo: </label>
-	        <input type="number" name="codigo">
-	        <br>
-	        <input type="submit" value="Borrar">
-	    </form>
-	      <form th:action="@{/filtrar}">
-	        <label>Ingrese la cadena por la que desea filtrar: </label>
-	        <input type="text" name="nombre">
-	        <br>
-	        <input type="submit" value="Filtrar">
-	    </form>
+    	<div class="formularios">
+    		
+		    <form th:action="@{/mostrarEstudiante}" method="POST" class="main-form" >
+		       	<div class="form-group">
+		       		<label>Buscar por codigo de estudiante</label>
+		       		<br>
+			        <input type="number" name="codigo" class="form-control">
+			        <br>
+			        
+			        <input type="submit" value="Buscar" class="btn btn-light">
+			    </div>
+		    </form>
+		    <br>
+		    <form th:action="@{/insertarEstudiante}" class="main-form" >
+		       <div class="form-group">
+		       		<input type="submit" value="Insertar nuevo estudiante" class="btn btn-light">
+		   	   </div>
+		    </form>
+		    <br>
+		    <form th:action="@{/borrarEstudiante}" method="POST" class="main-form">
+		        <div class="form-group">
+		        	<label>Borrar estudiante por codigo: </label>
+		        	<input type="number" name="codigo" class="form-control" >
+		        	<br>
+		       		<input type="submit" value="Borrar" class="btn btn-light"> 
+		        </div>
+		    </form>
+		    <br>
+		      <form th:action="@{/filtrar}" class="main-form">
+		        <div class="form-group">
+					<label>Ingrese la cadena por la que desea filtrar: </label>
+			        <input type="text" name="nombre" class="form-control">
+			        <br>
+			        <input type="submit" value="Filtrar" class="btn btn-light">
+			    		        
+		        </div>
+		      </form>
+		    
+		    	<br>
+		    
+		     <form th:action="@{/estudiante}" method="POST" class="main-form">
+		        <input type="submit" value="home" class="btn btn-light">
+		    </form>
+		    
+    	</div>	
+    		
 	    
-	     <form th:action="@{/estudiante}" method="POST">
-	        <input type="submit" value="home">
-	    </form>
-	    <br>
-	    
-	      <form th:action="@{/update}" method="POST">
-	          <label>Editar por codigo de estudiante: </label>
-	          <input type="number" name="codigo">
-	          <input type="submit" value="Editar">
-	    </form>
-	</div>
-  
+	   
 </body>
 </html>
