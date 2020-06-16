@@ -20,6 +20,7 @@
         		<th> Apellido </th>
         		<th> Edad </th>
         		<th> Estado </th>
+        		<th> Acciones </th>
            	</thead>
          <th:block th:each="estudiante, row: ${estudiantes}">
            		<tr>
@@ -28,6 +29,10 @@
 	                <th th:text="${estudiante.apellido}"></th>
 	                <th th:text="${estudiante.edad}"></th>
 	                <th th:text="${estudiante.estadoDelegate}"></th>
+	                <th>
+	                	<a th:href="@{'/update/' + ${estudiante.codigoEstudiante}}">Editar</a>
+	                </th>
+	             
 	            </tr>
         	</th:block>
     	</table>
@@ -54,6 +59,17 @@
 	        <input type="text" name="nombre">
 	        <br>
 	        <input type="submit" value="Filtrar">
+	    </form>
+	    
+	     <form th:action="@{/estudiante}" method="POST">
+	        <input type="submit" value="home">
+	    </form>
+	    <br>
+	    
+	      <form th:action="@{/update}" method="POST">
+	          <label>Editar por codigo de estudiante: </label>
+	          <input type="number" name="codigo">
+	          <input type="submit" value="Editar">
 	    </form>
 	</div>
   

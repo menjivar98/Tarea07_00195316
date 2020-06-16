@@ -18,4 +18,6 @@ public interface EstudianteService {
 
 	List <Estudiante> filtrarPor(String cadena) throws DataAccessException;
 
+	List<Estudiante> empiezaCon(String cadena) throws DataAccessException;
+
 }
