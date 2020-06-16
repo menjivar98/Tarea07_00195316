@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de estudiantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="src/main/resources/static/style/main.css"  th:href = "@{/style/main.css}" type="text/css">
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+  		<span class="navbar-brand mb-0 h1">Estudiante</span>
+	</nav>
+	
+	<div class="wrapper">
+		<table class="table table-hover">
+        	<thead>
+        		<th>codigo</th>
+        		<th> Nombre </th>
+        		<th> Apellido </th>
+        		<th> Edad </th>
+        		<th> Estado </th>
+           	</thead>
+         <th:block th:each="estudiante, row: ${estudiantes}">
+           		<tr>
+	                <th th:text="${estudiante.codigoEstudiante}"></th>
+	                <th th:text="${estudiante.Nombre}"></th>
+	                <th th:text="${estudiante.Apellido}"></th>
+	                <th th:text="${estudiante.Edad}"></th>
+	                <th th:text="${estudiante.estadoDelegate}"></th>
+	            </tr>
+        	</th:block>
+    	</table>
+    	<br>
+	    <form th:action="@{/mostrarEstudiante}" method="POST">
+	        <label>Buscar por codigo de estudiante: </label>
+	        <input type="number" name="codigo">
+	        <br>
+	        <input type="submit" value="Buscar">
+	    </form>
+	    <br>
+	    <form th:action="@{/insertarEstudiante}">
+	        <input type="submit" value="Insertar nuevo estudiante">
+	    </form>
+	    <br>
+	    <form th:action="@{/borrarEstudiante}" method="POST">
+	        <label>Borrar estudiante por codigo: </label>
+	        <input type="number" name="codigo">
+	        <br>
+	        <input type="submit" value="Borrar">
+	    </form>
+	      <form th:action="@{/Filtrar}" method="post">
+	        <label>Ingrese la cadena por la que desea filtrar: </label>
+	        <input type="text" name="nombre">
+	        <br>
+	        <input type="submit" value="Filtrar">
+	    </form>
+	</div>
+  
+</body>
+</html>
