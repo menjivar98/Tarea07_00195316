@@ -22,8 +22,8 @@ public class EstudianteServiceImpl implements EstudianteService{
 	@Override
 	public List<Estudiante> findAll() throws DataAccessException {
 		
-		return estudianteRepo.findAll();
-		//return estudianteRepo.mostrarTodos();
+		//return estudianteRepo.findAll();
+		return estudianteRepo.mostrarTodos();
 	}
 
 	@Override
